@@ -1,21 +1,16 @@
-zuul:
-  prefix: /api
-  ignoredServices: '*'
-  routes:
-    mailstat-mbox-splitter: /splitter/**
-    mailstat-api-gateway: /gateway/**
+#zuul:
+#  prefix: /api
+#  ignoredServices: '*'
+#  routes:
+#    mailstat-mbox-splitter: /splitter/**
+#    mailstat-api-gateway: /gateway/**
 
 server:
   port: 8080
-  compression:
-    enabled: true
-    mime-types: application/json,text/css,application/javascript
-    min-response-size: 2048
 
 # Internationalization
 spring.messages.basename: messages/messages
 
----
 spring:
   cloud:
     gateway:
@@ -26,9 +21,6 @@ spring:
             - Path=/api/splitter/**
           filters:
             - StripPrefix=2
-  config:
-    activate:
-      on-profile: docker
   zipkin:
     baseUrl: http://mailstat-tracing-server:9411
 eureka:

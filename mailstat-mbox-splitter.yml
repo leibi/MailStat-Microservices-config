@@ -1,11 +1,7 @@
 server:
   port: 8088
 
----
 spring:
-  config:
-    activate:
-      on-profile: docker
   zipkin:
     baseUrl: http://mailstat-tracing-server:9411
 eureka:
