@@ -17,6 +17,15 @@ spring.messages.basename: messages/messages
 
 ---
 spring:
+  cloud:
+    gateway:
+      routes:
+        - id: mailstat-mbox-splitter
+          uri: lb://mailstat-mbox-splitter
+          predicates:
+            - Path=/api/splitter/**
+          filters:
+            - StripPrefix=2
   config:
     activate:
       on-profile: docker
