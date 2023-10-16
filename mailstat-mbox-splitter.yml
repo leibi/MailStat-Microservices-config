@@ -4,6 +4,12 @@ server:
 spring:
   zipkin:
     baseUrl: http://mailstat-tracing-server:9411
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2GB
+      max-request-size: 2GB
+      file-size-threshold: 2GB
 eureka:
   client:
     serviceUrl:
