@@ -6,7 +6,6 @@ eureka:
     hostname: mailstat-discovery-server
   # standalone mode
   client:
-    enabled: false
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
