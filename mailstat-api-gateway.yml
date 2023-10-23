@@ -13,7 +13,6 @@ spring.messages.basename: messages/messages
 
 spring:
   cloud:
-    refresh: false
     gateway:
       routes:
         - id: mailstat-mbox-splitter

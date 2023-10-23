@@ -2,8 +2,6 @@ server:
   port: 8088
 
 spring:
-  cloud:
-    refresh: false
   zipkin:
     baseUrl: http://mailstat-tracing-server:9411
   servlet:
