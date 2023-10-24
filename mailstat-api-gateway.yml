@@ -15,12 +15,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: mailstat-mbox-splitter
-          uri: lb://mailstat-mbox-splitter
-          predicates:
-            - Path=/api/splitter/**
-          filters:
-            - StripPrefix=2
+      - id: mailstat-mbox-splitter
+        uri: lb://mailstat-mbox-splitter
+        predicates:
+        - Path=/api/splitter/**
+        filters:
+        - StripPrefix=2
+      - id: mailstat-stats-service
+        uri: lb://mailstat-stats-service
+        predicates:
+        - Path=/api/stats/**
+        filters:
+        - StripPrefix=2
   zipkin:
     baseUrl: http://mailstat-tracing-server:9411
 eureka:
