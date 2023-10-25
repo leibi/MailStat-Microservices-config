@@ -2,12 +2,12 @@ server:
   port: 8089
 
 spring:
+  kafka:
+    bootstrap-servers: kafka:29092
   datasource:
     url: jdbc:postgresql://postgres-server:5432/maildb?createDatabaseIfNotExist=true
     username: postgres
     password: S3cret
-  kafka:
-    bootstrap-servers: kafka:29092
   flyway:
     url: jdbc:postgresql://postgres-server:5432/
     user: postgres
