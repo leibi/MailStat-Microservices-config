@@ -8,8 +8,15 @@ spring:
     url: jdbc:postgresql://postgres-server:5432/maildb?createDatabaseIfNotExist=true
     username: postgres
     password: S3cret
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   flyway:
-    url: jdbc:postgresql://postgres-server:5432/
+    url: jdbc:postgresql://postgres-server:5432/maildb
     user: postgres
     password: S3cret
     enabled: true
